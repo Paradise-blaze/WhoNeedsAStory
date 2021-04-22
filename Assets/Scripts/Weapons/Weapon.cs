@@ -1,7 +1,14 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon
+[System.Serializable]
+public class Weapon : ScriptableObject
 {
+    [SerializeField]
+    // Weapon model
+    public Transform weaponTransform;
+
     public string weaponName;
     public int weaponDamage;
     public float weaponRange;
@@ -16,6 +23,8 @@ public class Weapon
     public int GetDamage() { return weaponDamage; }
     public float GetRange() { return weaponRange; }
     public float GetNextTimeToFire() { return nextTimeToFire; }
+
+    public virtual void PlayAttackAnimation() { }
 
     public bool CanFire()
     {

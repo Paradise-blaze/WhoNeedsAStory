@@ -6,22 +6,16 @@ using UnityEngine;
 public class PlayerCombat : CharacterCombat
 {
 
-    private Animator anim;
-
     [SerializeField]
+    // Player Camera
     private Camera fpsCam;
-
-    // THIS SHOULD BE IN WEAPON CLASS SMH
-    public Transform mace;
 
     // Update is called once per frame
     void Update()
     {
         if (Input.GetButton("Fire1") && myStats.currentWeapon.CanFire())
         {
-            // THIS SHOULD BE IN ANOTHER PLACE
-            anim = mace.GetComponent<Animator>();
-            anim.Play("MaceWeaponAttackAnimation");
+            myStats.currentWeapon.PlayAttackAnimation();
             Debug.Log(transform.name + " attacked with " + myStats.currentWeapon.GetName());
             Attack();
         }

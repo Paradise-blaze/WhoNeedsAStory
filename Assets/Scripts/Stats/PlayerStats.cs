@@ -10,7 +10,7 @@ public class PlayerStats : CharacterStats
         CurrentHealth = maxHealth;
 
         // GIVING DEFAULT WEAPON (MACE) TO PLAYER
-        currentWeapon = new MaceWeapon();
+        currentWeapon = ScriptableObject.CreateInstance<MaceWeapon>();
 
     }
 
