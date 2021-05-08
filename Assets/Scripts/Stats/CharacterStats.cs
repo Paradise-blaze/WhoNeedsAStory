@@ -11,7 +11,9 @@ public class CharacterStats : MonoBehaviour
 
     public Stat damage;
 
-    public Weapon currentWeapon;
+    public int currentWeapon;
+
+    public List<Weapon> weapons = new List<Weapon>();
 
     public void TakeDamage(int damage)
     {
@@ -39,6 +41,29 @@ public class CharacterStats : MonoBehaviour
         {
             TakeDamage(10);
         }
+    }
+
+    public Weapon getCurrentWeapon()
+    {
+        return weapons[currentWeapon];
+    }
+
+    public void nextWeapon()
+    {
+
+        getCurrentWeapon().Deactivate();
+
+        if (currentWeapon == weapons.Count - 1)
+        {
+            currentWeapon = 0;
+        }
+        else
+        {
+            ++currentWeapon;
+        }
+
+        getCurrentWeapon().Activate();
+
     }
 
 }

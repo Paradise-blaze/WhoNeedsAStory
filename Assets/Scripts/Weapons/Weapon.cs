@@ -18,6 +18,8 @@ public class Weapon : ScriptableObject
 
     private float nextTimeToFire = 0f;
 
+    public bool isActive;
+
 
     public string GetName() { return weaponName; }
     public int GetDamage() { return weaponDamage; }
@@ -25,6 +27,8 @@ public class Weapon : ScriptableObject
     public float GetNextTimeToFire() { return nextTimeToFire; }
 
     public virtual void PlayAttackAnimation() { }
+    public virtual void Deactivate() { }
+    public virtual void Activate() { }
 
     public bool CanFire()
     {

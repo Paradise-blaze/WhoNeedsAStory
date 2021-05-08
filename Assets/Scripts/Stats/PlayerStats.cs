@@ -4,13 +4,19 @@ using UnityEngine;
 
 public class PlayerStats : CharacterStats
 {
+
     private void Awake()
     {
         
         CurrentHealth = maxHealth;
 
         // GIVING DEFAULT WEAPON (MACE) TO PLAYER
-        currentWeapon = ScriptableObject.CreateInstance<MaceWeapon>();
+        weapons.Add(ScriptableObject.CreateInstance<MaceWeapon>());
+        weapons.Add(ScriptableObject.CreateInstance<TestStickWeapon>());
+
+        weapons[1].Deactivate();
+
+        currentWeapon = 0;
 
     }
 
