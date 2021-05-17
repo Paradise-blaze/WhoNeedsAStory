@@ -3,7 +3,7 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
 
-    public float radius = 3f;
+    public float radius = 2f;
 
     Transform player;
 
@@ -21,5 +21,4 @@ public class Interactable : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, radius);
     }
-
 }

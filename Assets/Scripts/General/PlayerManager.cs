@@ -16,4 +16,6 @@ public class PlayerManager : MonoBehaviour
     #endregion
 
     public GameObject player;
+
+    //player spawner and despawner
 }
