@@ -5,12 +5,16 @@ public class MainMenu : MonoBehaviour
 {
     public static int MenuScene;
 
-	private void Start() {
+    public GameObject mainMenu;
+    public GameObject levelSelectionMenu;
+
+    private void Start() {
         MenuScene = SceneManager.GetActiveScene().buildIndex;
     }
 
-	public void GameStart(){
-        SceneManager.LoadScene(MenuScene + 1);
+	public void LevelSelect(){
+        mainMenu.SetActive(false);
+        levelSelectionMenu.SetActive(true);
     }
 
     public void Quit(){
