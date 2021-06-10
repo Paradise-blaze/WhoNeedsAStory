@@ -16,8 +16,12 @@ public class Player : MonoBehaviour
     // Player Camera
     private Camera fpsCam;
 
+    [SerializeField]
+    public static Player playerObject;
+
 	private void Start() {
         playerStats = GetComponent<PlayerStats>();
+        playerObject = this;
 	}
 
 	// Update is called once per frame
@@ -44,7 +48,21 @@ public class Player : MonoBehaviour
             prevWeapon();
         }
 
-    }
+		if (Input.GetButton("E")) {
+			RaycastHit hit;
+
+			if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, 3)) {
+				Interactable interactable = hit.collider.GetComponent<Interactable>();
+				if (interactable != null) {
+                    PickupItem();
+				}
+			}
+		}
+	}
+
+    void PickupItem() {
+
+	}
     void Attack() {
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, getCurrentWeapon().weaponRange)) {

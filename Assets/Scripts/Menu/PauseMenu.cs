@@ -7,6 +7,7 @@ public class PauseMenu : MonoBehaviour
     public static bool isPaused = false;
 
     public GameObject pauseMenuUI;
+    public GameObject crossHair;
 
     void Update(){
 
@@ -23,12 +24,14 @@ public class PauseMenu : MonoBehaviour
     void Pause() {
         Time.timeScale = 0f;
         pauseMenuUI.SetActive(true);
+        crossHair.SetActive(false);
         isPaused = true;
         Cursor.lockState = CursorLockMode.None;
     }
 
     public void Resume() {
         pauseMenuUI.SetActive(false);
+        crossHair.SetActive(true);
         Time.timeScale = 1f;
         isPaused = false;
         Cursor.lockState = CursorLockMode.Locked;
