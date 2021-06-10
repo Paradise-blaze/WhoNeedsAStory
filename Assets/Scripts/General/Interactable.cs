@@ -3,22 +3,38 @@ using UnityEngine;
 public class Interactable : MonoBehaviour
 {
 
-    public float radius = 2f;
+    public float radius = 3f;
+    [SerializeField]
+    public Transform interactiontransform;
+
+    bool hasInteracted = false;
 
     Transform player;
 
-    void Update()
+    public virtual void Interact() {
+        Debug.Log("Interacting with: " + transform.name);
+    }
+
+	private void Start() {
+	}
+
+	void Update()
     {
-        float distance = Vector3.Distance(player.position, transform.position);
-        if(distance <= radius)
-        {
-            Debug.Log("Interact");
+		if (!hasInteracted) {
+            float distance = Vector3.Distance(Player.playerObject.transform.position, interactiontransform.position);
+            if (distance <= radius && Input.GetButton("E")) {
+                Interact();
+                hasInteracted = true;
+            }
         }
     }
 
     void OnDrawGizmosSelected()
     {
+        if(interactiontransform == null) {
+            interactiontransform = transform;
+		}
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, radius);
+        Gizmos.DrawWireSphere(interactiontransform.position, radius);
     }
 }

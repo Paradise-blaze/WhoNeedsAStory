@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Enemy : Interactable {
+public class Enemy: MonoBehaviour {
     public int maxHealth = 100;
     public int damage;
     public int CurrentHealth;
