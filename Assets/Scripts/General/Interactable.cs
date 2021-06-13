@@ -9,8 +9,6 @@ public class Interactable : MonoBehaviour
 
     bool hasInteracted = false;
 
-    Transform player;
-
     public virtual void Interact() {
         Debug.Log("Interacting with: " + transform.name);
     }
@@ -21,7 +19,7 @@ public class Interactable : MonoBehaviour
 	void Update()
     {
 		if (!hasInteracted) {
-            float distance = Vector3.Distance(Player.playerObject.transform.position, interactiontransform.position);
+            float distance = Vector3.Distance(Player.instance.transform.position, interactiontransform.position);
             if (distance <= radius && Input.GetButton("E")) {
                 Interact();
                 hasInteracted = true;

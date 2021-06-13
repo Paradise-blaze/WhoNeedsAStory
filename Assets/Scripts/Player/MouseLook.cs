@@ -10,6 +10,8 @@ public class MouseLook : MonoBehaviour
     [SerializeField]
     public int sensitivityCoeff = 1;
     float xRotation = 0f;
+    float mouseX = 0;
+    float mouseY = 0;
 
     public Transform playerBody;
 
@@ -22,8 +24,15 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * sensitivityCoeff * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * sensitivityCoeff * Time.deltaTime;
+
+        if (Inventory.isInventoryVisible || Inventory.isCharacterVisible) {
+            mouseX = 0;
+            mouseY = 0;
+
+        } else {
+            mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * sensitivityCoeff * Time.deltaTime;
+            mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * sensitivityCoeff * Time.deltaTime;
+        }
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
