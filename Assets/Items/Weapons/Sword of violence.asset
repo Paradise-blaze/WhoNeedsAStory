@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5a388fcedd78c46bc6a5f84a73089a, type: 3}
+  m_Name: Sword of violence
+  m_EditorClassIdentifier: 
+  name: Sword of violence
+  icon: {fileID: 21300000, guid: 5bc40ce00154214458e671c17acb3f8b, type: 3}
+  isDefaultItem: 0
+  equipmentSlot: 2
+  mesh: {fileID: -7511558181221131132, guid: fb136f3264144b04585ded20787d0e3e, type: 3}
+  armorModifier: 0
+  damageModifier: 10
