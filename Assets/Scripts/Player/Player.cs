@@ -21,8 +21,6 @@ public class Player : MonoBehaviour
 
     public PlayerStats playerStats;
 
-    public int currentWeapon;
-
     public Weapon weapon;
 
     [SerializeField]
@@ -65,7 +63,13 @@ public class Player : MonoBehaviour
                 }
             }
         }
+		
+        if(playerStats.currentHealth <= 0)
+        {
+            Die();
+        }
     }
+
 
     void PickupItem() {
 
@@ -82,9 +86,11 @@ public class Player : MonoBehaviour
 
     }
 
+
     public virtual void Die() {
         //When player dies showing game over screen
         //Destroy(gameObject);
+        getCurrentWeapon().Deactivate();
         Debug.Log(transform.name + " is Dead.");
     }
 }
