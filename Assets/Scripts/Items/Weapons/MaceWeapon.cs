@@ -23,8 +23,8 @@ public class MaceWeapon : Weapon
     private void OnEnable()
     {
 
-        //GameObject go = Instantiate(Resources.Load("Assets/Models/WeaponModels/ModelWeaponMace.prefab", typeof(GameObject))) as GameObject;
-        maceGameObject = Instantiate(AssetDatabase.LoadAssetAtPath("Assets/Models/WeaponModels/Sword.prefab", typeof(Object))) as GameObject;
+        GameObject go = Instantiate(Resources.Load<Object>("Sword")) as GameObject;
+        /*maceGameObject = Instantiate(AssetDatabase.LoadAssetAtPath("Assets/Models/WeaponModels/Sword.prefab", typeof(Object))) as GameObject; */
         maceGameObject.transform.parent = Camera.main.transform;
         scale = maceGameObject.transform.lossyScale;
 

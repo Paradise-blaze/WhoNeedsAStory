@@ -13397,7 +13397,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerStats: {fileID: 0}
-  currentWeapon: 0
   weapon: {fileID: 0}
   fpsCam: {fileID: 1261780468}
 --- !u!114 &1644234178
@@ -13414,6 +13413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth:
     baseValue: 100
+  currentHealth: 100
   armor:
     baseValue: 0
   damage:
@@ -13980,7 +13980,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1671781005
 RectTransform:
   m_ObjectHideFlags: 0

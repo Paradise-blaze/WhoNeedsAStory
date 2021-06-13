@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class Enemy: MonoBehaviour {
+    public static int enemyCount = 0;
     public int maxHealth = 100;
     public int damage;
     public int CurrentHealth;
@@ -9,7 +10,7 @@ public class Enemy: MonoBehaviour {
 
 
     private void Awake() {
-
+        enemyCount++;
         CurrentHealth = maxHealth;
         Player = GameObject.Find("Player");
     }
@@ -25,6 +26,7 @@ public class Enemy: MonoBehaviour {
     }
 
     public virtual void Die() {
+        enemyCount--;
         Destroy(gameObject);
         Debug.Log(transform.name + " is Dead.");
     }

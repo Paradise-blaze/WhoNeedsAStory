@@ -22,11 +22,6 @@ public class Inventory : MonoBehaviour
 	public GameObject inventoryPanel;
 	public GameObject characterPanel;
 
-	public Button equip;
-	public Button remove;
-	public Button cancel;
-
-
 	public static bool isInventoryVisible = false;
 	public static bool isCharacterVisible = false;
 

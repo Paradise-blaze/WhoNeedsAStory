@@ -90,7 +90,7 @@ public class Player : MonoBehaviour
     public virtual void Die() {
         //When player dies showing game over screen
         //Destroy(gameObject);
-        getCurrentWeapon().Deactivate();
+        weapon.Deactivate();
         Debug.Log(transform.name + " is Dead.");
     }
 }
