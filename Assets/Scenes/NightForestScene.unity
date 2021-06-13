@@ -14155,6 +14155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth:
     baseValue: 100
+  currentHealth: 100
   armor:
     baseValue: 0
   damage:

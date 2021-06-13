@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
-    PlayerStats playerStats;
+    static PlayerStats playerStats;
 
     public int currentWeapon;
 
@@ -58,6 +58,11 @@ public class Player : MonoBehaviour
 				}
 			}
 		}
+
+        if(playerStats.currentHealth <= 0)
+        {
+            Die();
+        }
 	}
 
     void PickupItem() {
@@ -76,9 +81,11 @@ public class Player : MonoBehaviour
 
     }
 
+
     public virtual void Die() {
         //When player dies showing game over screen
         //Destroy(gameObject);
+        getCurrentWeapon().Deactivate();
         Debug.Log(transform.name + " is Dead.");
     }
 

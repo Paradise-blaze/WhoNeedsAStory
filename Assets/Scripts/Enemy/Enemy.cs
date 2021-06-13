@@ -5,16 +5,15 @@ public class Enemy: MonoBehaviour {
     public int damage;
     public int CurrentHealth;
 
+    public GameObject Player;
+
 
     private void Awake() {
+
         CurrentHealth = maxHealth;
+        Player = GameObject.Find("Player");
     }
 
-    void Update() {
-        if (Input.GetKeyDown(KeyCode.T)) {
-            TakeDamage(50);
-        }
-    }
     public void TakeDamage(int damage) {
         CurrentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage.");
