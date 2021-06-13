@@ -12,26 +12,49 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -9.81f;
     public float groundDistance = 0.4f;
     bool isGrounded;
+    bool isFullyDead = false;
 
     Vector3 velocity;
 
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
-        if(isGrounded && velocity.y < 0)
+        if (!isDead())
         {
-            velocity.y = -2f;
+
+            isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+            if (isGrounded && velocity.y < 0)
+            {
+                velocity.y = -2f;
+            }
+
+            float x = Input.GetAxis("Horizontal");
+            float z = Input.GetAxis("Vertical");
+
+            Vector3 move = transform.right * x + transform.forward * z;
+            controller.Move(move * speed * Time.deltaTime);
+
+            velocity.y += gravity * Time.deltaTime;
+            controller.Move(velocity * Time.deltaTime);
+
+
+
+        } else if(!isFullyDead)
+        {
+            Player player = GetComponent<Player>();
+            Debug.Log("Position: " + player.transform.position);
+            player.transform.position = new Vector3(player.transform.position.x, player.transform.position.y-1.5f, player.transform.position.z);
+
+            isFullyDead = true;
         }
-
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move * speed * Time.deltaTime);
-
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
     }
+
+    bool isDead()
+    {
+        PlayerStats p = GetComponent<PlayerStats>();
+        return p.currentHealth <= 0;
+    }
+
 }
