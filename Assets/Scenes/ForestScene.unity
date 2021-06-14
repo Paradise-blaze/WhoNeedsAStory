@@ -3573,7 +3573,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &559512765
 Transform:
   m_ObjectHideFlags: 0
@@ -8520,6 +8520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140264b36e3ccd949ac5d9f686849724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyCount: 0
 --- !u!114 &1051161551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8534,9 +8535,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 1237353795}
   characterPanel: {fileID: 1671781004}
-  equip: {fileID: 2105297575}
-  remove: {fileID: 1548598335}
-  cancel: {fileID: 381814907}
   space: 20
   items: []
 --- !u!114 &1051161552
@@ -15559,7 +15557,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Patyczak (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6735543016707647693, guid: 81c7ed14515acf54d8331d9f7238722d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6735543016707647692, guid: 81c7ed14515acf54d8331d9f7238722d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 81c7ed14515acf54d8331d9f7238722d, type: 3}
 --- !u!224 &1866082523 stripped
 RectTransform:
@@ -17496,26 +17499,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 403725053}
     m_Modifications:
-    - target: {fileID: 6553808187757955506, guid: 81c7ed14515acf54d8331d9f7238722d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.70838785
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553808187757955506, guid: 81c7ed14515acf54d8331d9f7238722d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553808187757955506, guid: 81c7ed14515acf54d8331d9f7238722d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7058233
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553808187757955506, guid: 81c7ed14515acf54d8331d9f7238722d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6553808187757955506, guid: 81c7ed14515acf54d8331d9f7238722d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -89.792
-      objectReference: {fileID: 0}
     - target: {fileID: 6735543016707647683, guid: 81c7ed14515acf54d8331d9f7238722d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -17563,6 +17546,10 @@ PrefabInstance:
     - target: {fileID: 6735543016707647693, guid: 81c7ed14515acf54d8331d9f7238722d, type: 3}
       propertyPath: m_Name
       value: Patyczak
+      objectReference: {fileID: 0}
+    - target: {fileID: 6735543016707647693, guid: 81c7ed14515acf54d8331d9f7238722d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81c7ed14515acf54d8331d9f7238722d, type: 3}

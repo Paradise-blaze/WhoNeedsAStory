@@ -3,8 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    #region Singleton
 
-    public static bool isPaused = false;
+    public static PauseMenu instance;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            return;
+        }
+        instance = this;
+    }
+
+    #endregion
+
+    public bool isPaused = false;
 
     public GameObject pauseMenuUI;
     public GameObject crossHair;
@@ -38,6 +52,7 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void GoToMenu() {
+        Debug.Log("menu button");
         Time.timeScale = 1f;
         isPaused = false;
         SceneManager.LoadScene(MainMenu.MenuScene);

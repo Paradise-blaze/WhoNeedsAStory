@@ -34,7 +34,7 @@ public class Inventory : MonoBehaviour
 	public List<Item> items = new List<Item>();
 
 	private void Update() {
-		if (isInventoryVisible || isCharacterVisible) {
+		if (isInventoryVisible || isCharacterVisible || PauseMenu.instance.isPaused) {
 			Cursor.lockState = CursorLockMode.None;
 		} else {
 			Cursor.lockState = CursorLockMode.Locked;

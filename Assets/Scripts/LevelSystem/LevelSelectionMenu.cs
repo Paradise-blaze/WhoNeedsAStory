@@ -25,6 +25,19 @@ public class LevelSelectionMenu : MonoBehaviour
         }
     }
 
+    public void Update()
+    {
+        int levelAt = PlayerPrefs.GetInt("levelAt", 2);
+
+        for (int i = 0; i < levelButtons.Length; i++)
+        {
+            if (i + 2 > levelAt)
+            {
+                levelButtons[i].interactable = false;
+            }
+        }
+    }
+
     public void LevelSelect(int levelNumber)
     {
         SceneManager.LoadScene(MenuScene + levelNumber);

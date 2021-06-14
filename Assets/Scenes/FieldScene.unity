@@ -4991,6 +4991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb67ca9348999854bbc85e28b47c01f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
   pauseMenuUI: {fileID: 470817905}
   crossHair: {fileID: 1128982091}
 --- !u!114 &848491867
@@ -6176,9 +6177,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventoryPanel: {fileID: 360846467}
   characterPanel: {fileID: 936514519}
-  equip: {fileID: 0}
-  remove: {fileID: 0}
-  cancel: {fileID: 0}
   space: 20
   items: []
 --- !u!114 &961785429
@@ -6193,6 +6191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 140264b36e3ccd949ac5d9f686849724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyCount: 0
 --- !u!114 &961785430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7972,7 +7971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6735543016707647683, guid: 52b9433adbfc60744a86db6f7644cf99, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 33.41
+      value: 71.5
       objectReference: {fileID: 0}
     - target: {fileID: 6735543016707647683, guid: 52b9433adbfc60744a86db6f7644cf99, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7980,7 +7979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6735543016707647683, guid: 52b9433adbfc60744a86db6f7644cf99, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 151.32
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 6735543016707647683, guid: 52b9433adbfc60744a86db6f7644cf99, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8013,10 +8012,6 @@ PrefabInstance:
     - target: {fileID: 6735543016707647693, guid: 52b9433adbfc60744a86db6f7644cf99, type: 3}
       propertyPath: m_Name
       value: Patyczak 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6735543016707647695, guid: 52b9433adbfc60744a86db6f7644cf99, type: 3}
-      propertyPath: lookRadius
-      value: 12.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52b9433adbfc60744a86db6f7644cf99, type: 3}
