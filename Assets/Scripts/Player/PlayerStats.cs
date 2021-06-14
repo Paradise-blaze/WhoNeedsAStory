@@ -10,8 +10,11 @@ public class PlayerStats : MonoBehaviour {
     public Stat armor;
     public Stat damage;
 
+    public HealthBar healthBar;
+
 	private void Start() {
         EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
+        healthBar.SetMaxHealth(maxHealth.GetValue());
 	}
 
 	private void OnEquipmentChanged(Equipment newItem, Equipment oldItem) {
@@ -31,10 +34,11 @@ public class PlayerStats : MonoBehaviour {
     }
 
     public void TakeDamage (int damage) {
-        //damage -= armor.GetValue();
-        //damage = Mathf.Clamp(damage, 0, int.MaxValue);
+        damage -= armor.GetValue();
+        damage = Mathf.Clamp(damage, 0, int.MaxValue);
 
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
 
         Debug.Log(currentHealth);
 
