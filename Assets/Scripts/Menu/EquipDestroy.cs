@@ -29,7 +29,7 @@ public class EquipDestroy : MonoBehaviour
 
     public void Choose(Item item) {
         equipDestroy.SetActive(true);
-        buttons[0].onClick.AddListener(() => { item.Equip(); Cancel(); }); // equip
+        buttons[0].onClick.AddListener(() => { item.Equip(); Cancel(); });
         buttons[1].onClick.AddListener(() => {Inventory.inventoryInstance.Remove(item); Cancel(); });
         buttons[2].onClick.AddListener(() => Cancel());
     }
